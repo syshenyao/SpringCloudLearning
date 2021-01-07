@@ -1,2 +1,11 @@
+#  注意格式，短横线的位置，以及时间时区
 server:
-  port: 8080
+  port: 8081
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: time_route
+        uri: http://ityouknow.com
+        predicates:
+        - After=2021-01-07T14:06:06+08:00[Asia/Shanghai]
